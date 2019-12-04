@@ -2,6 +2,7 @@ import numpy as np
 import scipy as sp
 from scipy.linalg import cho_factor, cho_solve
 
+#Size of 2d-array 
 N = 1000
 
 #Filling N*N array to initialize it
