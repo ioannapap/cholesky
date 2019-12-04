@@ -2,16 +2,15 @@ import numpy as np
 import scipy as sp
 from scipy.linalg import cho_factor, cho_solve
 
-#Size of 2d-array 
 N = 1000
 
 #Filling N*N array to initialize it
 
-A1 = np.zeros((N,N), int)
-A2 = np.zeros((N,N), int)
+A1 = np.zeros((N,N), float)
+A2 = np.zeros((N,N), float)
 
-b1 = np.zeros((N,1), int)
-b2 = np.ones((N,1), int) 
+b1 = np.zeros((N,1), float)
+b2 = np.ones((N,1), float) 
 
 #Filling arrays with the correspondant values
 
