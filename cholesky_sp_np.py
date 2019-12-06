@@ -1,8 +1,13 @@
 import numpy as np
 import scipy as sp
 from scipy.linalg import cho_factor, cho_solve
+import time
+start_time = time.time()
+#float_formatter = '{:.4f}'.format
+#np.set_printoptions(formatter={'float_kind':float_formatter})
 
-N = 1000
+N = 10000
+print('N: ', N)
 
 #Filling N*N array to initialize it
 
@@ -36,19 +41,29 @@ b2[1] = 0
 b2[-2] = 0
 b2[-1] = 4
 
-print(A1)
-print(A2)
-
-print(b1)
-print(b2)
+#print(A1)
+#print(A2)
+#print(b1)
+#print(b2)
 
 A, low = cho_factor(A1)
 x = cho_solve((A, low), b1)
-print('A1 x = b1 solution for x is:')
-print(x)
+
+print('A1 x = b1 \n Ten median x are:')
+
+ml = len(x) // 2 - 5
+mu = len(x) // 2 + 5
+
+print(x[ml : mu])
 
 A, low = cho_factor(A2)
 x = cho_solve((A, low), b2)
-print('A2 x = b2 solution for x is:')
-print(x)
 
+print('A2 x = b2 \n Ten median x are:')
+
+ml = len(x) // 2 - 5
+mu = len(x) // 2 + 5
+
+print(x[ml : mu])
+
+print("--- %s seconds ---" % (time.time() - start_time))

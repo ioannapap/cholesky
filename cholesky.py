@@ -1,6 +1,8 @@
 import numpy as np
 import math
 from math import sqrt
+#float_percision = '{:.4f}'.format
+#np.set_printoptions(formatter={'float_kind':float_percision})
 
 def decomp_cholesky(A):
 
@@ -73,6 +75,7 @@ def solve_cholesky(L,b):
 if __name__ == '__main__':
 
 	N = 1000
+	print('N = ', N)
 
 	#Filling N*N array to initialize it
 	A1 = np.zeros((N,N), float)
@@ -107,11 +110,19 @@ if __name__ == '__main__':
 	L = decomp_cholesky(A1)
 	x = solve_cholesky(L, b1)
 
-	print('A1 x = b1 solution for x is:')
-	print(x)
+	print('A1 x = b1 \n Ten median x are:')
+
+	ml = len(x) // 2 - 5
+	mu = len(x) // 2 + 5
+
+	print(x[ml : mu])
 
 	L = decomp_cholesky(A2)
 	x = solve_cholesky(L, b2)
 
-	print('A2 x = b2 solution for x is:')
-	print(x)
+	print('A2 x = b2 \n Ten median x are:')
+
+	ml = len(x) // 2 - 5
+	mu = len(x) // 2 + 5
+
+	print(x[ml : mu])
