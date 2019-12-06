@@ -6,7 +6,7 @@ start_time = time.time()
 #float_formatter = '{:.4f}'.format
 #np.set_printoptions(formatter={'float_kind':float_formatter})
 
-N = 10000
+N = 1000
 print('N: ', N)
 
 #Filling N*N array to initialize it
@@ -40,11 +40,6 @@ b2[0] = 4
 b2[1] = 0
 b2[-2] = 0
 b2[-1] = 4
-
-#print(A1)
-#print(A2)
-#print(b1)
-#print(b2)
 
 A, low = cho_factor(A1)
 x = cho_solve((A, low), b1)
