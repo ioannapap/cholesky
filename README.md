@@ -1,5 +1,5 @@
 # cholesky
-Cholesky decomposition for the numerical solution of linear equations
+Cholesky Decomposition for the numerical solution of linear systems
 
 IN GENERAL: 
 
